@@ -1,4 +1,5 @@
 import matplotlib
+import matplotlib.pyplot as plt
 import numpy as np
 import random
 
@@ -96,8 +97,19 @@ print(a)
 print(b)
 print(c)
 '''
-print((no_switch/runs)*100)
-print((switch/runs)*100)
+no_switch = (no_switch/runs)*100
+switch = (switch/runs)*100
+print(no_switch)
+print(switch)
+
+#Pie chart 
+labels = "Car with switch!", "Car with no switch!"
+sizes = [switch, no_switch]
+
+fig1, pie1 = plt.subplots()
+pie1.pie(sizes, labels = labels, autopct='%1.1f%%')
+pie1.set_title("Switch Versus No Switch Wins: " + str(runs) + " games.")
+plt.show()
 
             
             
